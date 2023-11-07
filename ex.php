@@ -7,10 +7,16 @@
 </head>
 <body>
     <h1>Classificação do Nadador:</h1>
-
+    <form action="" method="post">
+        <div class="form">
+            <input type="number" name="idade" id="idade" placeholder="Informe a Idade do Nadador">
+            <br><input type="submit" value="Calcular">
+            <br><input type="reset" value="Limpar"><br><br>
+        </div>  
+    </form>
     <?php
-        $idadeDoNadador = 2;
-
+    if(!empty($_POST['idade'])){
+        $idadeDoNadador = $_POST['idade'];
         switch($idadeDoNadador){
             case ($idadeDoNadador >=5 && $idadeDoNadador<=7): echo"Infantil A";
             break;
@@ -26,7 +32,9 @@
             break;
             default: echo "Incapaz de Competir";
 
-
+        }
+        }else{
+            echo"";
         }
 
     ?>
